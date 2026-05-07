@@ -1,70 +1,236 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VapeTech Store — IA Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
 
-{% block title %}Inicio - EcoEnergía{% endblock %}
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    VapeTech<span style="color: var(--neon);">AI</span>
+  </div>
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#chat-section">IA Chat</a>
+    <a href="#">Garantía</a>
+  </nav>
+  <button class="header-btn" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})">Consultar IA ↗️</button>
+</header>
 
-{% block content %}
-
-<!-- HERO -->
+<!-- ─── HERO ─── -->
 <section class="hero">
-  <div class="hero-text">
-    <h1>⚡ Energía del Futuro</h1>
-    <p>Transformamos el mundo con energías limpias, sostenibles y accesibles.</p>
-    <a href="/energia" class="btn">Explorar Energías</a>
-  </div>
-
-  <div class="hero-img">
-    <img src="{{ url_for('static', filename='img/capy.jpg') }}">
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section class="cards">
-  <h2>🌱 Tipos de Energía</h2>
-
-  <div class="card-container">
-
-    <div class="card">
-      <img src="{{ url_for('static', filename='img/solar.jpeg') }}">
-      <h3>Solar</h3>
-      <p>Captura la energía del sol para generar electricidad limpia.</p>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      IA disponible 24/7
     </div>
-
-    <div class="card">
-      <img src="{{ url_for('static', filename='img/eolica.jpeg') }}">
-      <h3>Eólica</h3>
-      <p>Aprovecha la fuerza del viento mediante aerogeneradores.</p>
+    <h1>La tienda del<br><span>futuro tech</span><br>está aquí.</h1>
+    <p class="hero-sub">
+      Vapers premium, smartphones de última generación y un asistente de IA que responde todas tus dudas al instante. Sin esperas, sin filas.
+    </p>
+    <div class="hero-ctas">
+      <a href="#productos" class="btn-primary">Ver catálogo →</a>
+      <a href="#chat-section" class="btn-secondary">💬 Hablar con IA</a>
     </div>
-
-    <div class="card">
-      <img src="{{ url_for('static', filename='img/hidraulica.jpeg') }}">
-      <h3>Hidráulica</h3>
-      <p>Utiliza el agua para producir energía sostenible.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- BENEFICIOS -->
-<section class="benefits">
-  <h2>🚀 Beneficios</h2>
-
-  <div class="card-container">
-    <div class="card">
-      <h3>🌍 Ecológico</h3>
-      <p>Reduce la contaminación y protege el planeta.</p>
-    </div>
-
-    <div class="card">
-      <h3>💰 Económico</h3>
-      <p>Ahorro a largo plazo en consumo energético.</p>
-    </div>
-
-    <div class="card">
-      <h3>♻️ Sostenible</h3>
-      <p>Recursos naturales inagotables.</p>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Productos en stock</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">IA disponible</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
     </div>
   </div>
 </section>
 
-{% endblock %}
- 
+<!-- ─── PRODUCTOS ─── -->
+<section class="section" id="productos">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Catálogo</p>
+    <h2>Lo más nuevo en tienda</h2>
+    <p class="section-sub">Equipos seleccionados con la mejor relación calidad-precio del mercado.</p>
+    <div class="products-grid">
+
+      <div class="product-card">
+         <div class="product-img"><img src="{{ url_for('static', filename='img/img1.jpeg') }}"><div class="product-badge">Nuevo</div></div>
+        <div class="product-info">
+          <div class="product-name">Vape Pro X500</div>
+          <div class="product-desc">5000 puffs · Batería 1500mAh · 20 sabores</div>
+          <div class="product-footer">
+            <div class="product-price">$45.000</div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="{{ url_for('static', filename='img/cell1.jpeg ) }}"><div class="product-badge">Nuevo</div></div>
+        <div class="product-info">
+          <div class="product-name">Samsung A55 5G</div>
+          <div class="product-desc">6.6" AMOLED · 5000mAh · 50MP AI Cam</div>
+          <div class="product-footer">
+            <div class="product-price">$1.890.000</div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="{{ url_for('static', filename='img/img2.jpeg') }}"><div class="product-badge">Nuevo</div></div>
+        <div class="product-info">
+          <div class="product-name">GeekVape Aegis Legend</div>
+          <div class="product-desc">200W · IP67 resistente al agua · Dual 18650</div>
+          <div class="product-footer">
+            <div class="product-price">$280.000</div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="{{ url_for('static', filename='img/cell2.jpeg') }}"><div class="product-badge"></div></div>
+        <div class="product-info">
+          <div class="product-name">iPhone 15 128GB</div>
+          <div class="product-desc">Dynamic Island · USB-C · Cámara 48MP</div>
+          <div class="product-footer">
+            <div class="product-price">$3.200.000</div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">🔋</div>
+        <div class="product-info">
+          <div class="product-name">SMOK Nord 5</div>
+          <div class="product-desc">2000mAh · Pantalla OLED · RPM y DC MTL</div>
+          <div class="product-footer">
+            <div class="product-price">$195.000</div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">📱</div>
+        <div class="product-info">
+          <div class="product-name">Xiaomi Redmi Note 13</div>
+          <div class="product-desc">AMOLED 120Hz · 108MP · Carga 67W</div>
+          <div class="product-footer">
+            <div class="product-price">$980.000</div>
+            <button class="add-btn">+</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section class="section" id="nosotros" style="padding-top:0;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">¿Por qué nosotros?</p>
+    <h2>Tech + IA, sin complicaciones</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">Asistente IA 24/7</div>
+        <div class="feature-desc">Resuelve tus dudas sobre productos, comparativos, compatibilidad y más, en segundos.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <div class="feature-title">Envío express</div>
+        <div class="feature-desc">Despachos el mismo día para pedidos antes de las 3pm. Cubrimos todo el país.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">Garantía real</div>
+        <div class="feature-desc">Todos los equipos con garantía directa. Celulares 12 meses, vapers 6 meses.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💳</div>
+        <div class="feature-title">Pago fácil</div>
+        <div class="feature-desc">PSE, tarjetas, efectivo y Nequi. Cuotas sin intereses con tarjetas seleccionadas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CHATBOT ─── -->
+<section class="section" id="chat-section">
+  <div class="chat-wrapper">
+
+    <div class="chat-info">
+      <p class="section-label">Asistente IA</p>
+      <h2>Pregunta lo que quieras sobre nuestros productos</h2>
+      <p class="section-sub" style="margin-bottom:1.2rem;">
+        Nuestro chatbot con IA responde al instante: comparativos, compatibilidad, precios, usos y recomendaciones personalizadas.
+      </p>
+      <div class="chat-bubbles">
+        <div class="bubble"><span class="bubble-icon">🔋</span> ¿Cuánto dura la batería del Vape X500?</div>
+        <div class="bubble"><span class="bubble-icon">📱</span> ¿Cuál es mejor para gaming, el A55 o el Note 13?</div>
+        <div class="bubble"><span class="bubble-icon">💨</span> ¿Qué nicotina me recomiendas para empezar?</div>
+        <div class="bubble"><span class="bubble-icon">🛡️</span> ¿Los vapers tienen garantía?</div>
+      </div>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-header">
+        <div class="chat-avatar">⚡</div>
+        <div class="chat-header-info">
+          <div class="name">VapeTech IA</div>
+          <div class="chat-status"><div class="status-dot"></div> En línea ahora</div>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="msg bot">
+          <div class="msg-avatar bot">IA</div>
+          <div class="msg-bubble">¡Hola! 👋 Soy el asistente de VapeTech. Puedo ayudarte con comparativos de productos, precios, nicotinas, compatibilidad de celulares y mucho más. ¿En qué te ayudo hoy?</div>
+        </div>
+      </div>
+
+      <div class="chat-suggestions" id="chips">
+        <button class="chip" onclick="sendChip(this)">¿Mejor vape desechable?</button>
+        <button class="chip" onclick="sendChip(this)">Celular para fotos</button>
+        <button class="chip" onclick="sendChip(this)">¿Tienen envío a mi ciudad?</button>
+      </div>
+
+      <div class="chat-input-area">
+        <input class="chat-input" id="chat-input" type="text" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter') sendMessage()" />
+        <button class="send-btn" onclick="sendMessage()">➤</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">VapeTech<span style="color:var(--neon)">AI</span></div>
+  <p>© 2025 VapeTech Store — Bogotá, Colombia</p>
+  <p style="color:var(--muted)">Hecho con IA ⚡</p>
+</footer>
+
+<button class="float-chat-btn" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})" title="Chatear con IA">💬</button>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

@@ -22,7 +22,12 @@
     --muted: #888899;
   }
  
-  { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+
+  * {  margin: 0;
+     padding: 0; 
+     box-sizing: border-box; 
+    }
  
   html { scroll-behavior: smooth; }
  
@@ -315,6 +320,24 @@
     position: relative;
     overflow: hidden;
   }
+  .vape1 {
+    max-width: 80%;
+  }
+  .vape2 {
+    max-width: 80%;
+  }
+  .vape3 {
+    max-width: 60%;
+  }
+  .cell1 {
+    max-width: 50%;
+  }
+  .cell2 {
+    max-width: 60%;
+  }
+  .cell3 {
+    max-width: 60%;
+  }
  
   .product-img::after {
     content: '';
@@ -572,6 +595,42 @@ margin-bottom: 15px;
   width: 100%;
   border-radius: 10px;
 }
+/* Imagen de fondo con Unsplash — ciudad futurista / tech */
+  .hero-bg {
+    position:absolute; inset:0; z-index:0;
+    background-image: url('../img/gato.jpg');
+    background-size:cover;
+    background-position:center 30%;
+    background-repeat:no-repeat;
+  }
+
+  /* Degradado multicapa sobre la imagen */
+  .hero-bg::after {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      /* Viñeta oscura en bordes */
+      radial-gradient(ellipse at 60% 50%, rgba(10,10,15,0) 0%, rgba(10,10,15,0.7) 70%),
+      /* Degradado izquierda → transparente (para leer el texto) */
+      linear-gradient(90deg, rgba(10,10,15,0.97) 0%, rgba(10,10,15,0.85) 38%, rgba(10,10,15,0.25) 65%, rgba(10,10,15,0.05) 100%),
+      /* Degradado abajo → oscuro (pie de hero) */
+      linear-gradient(180deg, rgba(10,10,15,0) 40%, rgba(10,10,15,0.95) 100%),
+      /* Tinte verde neón sutil en esquina derecha */
+      radial-gradient(ellipse at 90% 15%, rgba(87,255,212,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 85%, rgba(184,255,87,0.12) 0%, transparent 50%);
+  }
+
+  /* Partículas decorativas */
+  .hero-particles {
+    position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden;
+  }
+  .particle {
+    position:absolute;
+    border-radius:50%;
+    background:var(--neon);
+    opacity:0;
+    animation:floatUp linear infinite;
+  }
 
 /* ANIMACIÓN */
 @keyframes float {

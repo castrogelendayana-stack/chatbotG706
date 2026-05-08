@@ -12,14 +12,14 @@
   <nav>
     <a href="#productos">Productos</a>
     <a href="#nosotros">Nosotros</a>
-    <a href="#chat-section">IA Chat</a>
-    <a href="#">Garantía</a>
   </nav>
-  <button class="header-btn" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})">Consultar IA ↗</button>
+
 </header>
 
 <!-- ─── HERO ─── -->
 <section class="hero">
+
+
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
   <div class="hero-content">
@@ -33,7 +33,7 @@
     </p>
     <div class="hero-ctas">
       <a href="#productos" class="btn-primary">Ver catálogo →</a>
-      <a href="#chat-section" class="btn-secondary">💬 Hablar con IA</a>
+     
     </div>
     <div class="stats">
       <div class="stat-item">
@@ -50,6 +50,16 @@
       </div>
     </div>
   </div>
+  <!-- Imagen de fondo + degradado -->
+  <div class="hero-bg"></div>
+
+  <!-- Línea de escaneo animada -->
+  <div class="scan-line"></div>
+
+  <!-- Partículas flotantes -->
+  <div class="hero-particles" id="particles"></div>
+
+
 </section>
 
 <!-- ─── PRODUCTOS ─── -->
@@ -61,73 +71,72 @@
     <div class="products-grid">
 
       <div class="product-card">
-         <div class="product-img"><img src="{{ url_for('static', filename='img/img1.jpeg') }}"><div class="product-badge">Nuevo</div></div>
+         <div class="product-img"><img class="vape1" src="{{ url_for('static', filename='img/img1.jpeg') }}"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
           <div class="product-name">Vape Pro X500</div>
           <div class="product-desc">5000 puffs · Batería 1500mAh · 20 sabores</div>
           <div class="product-footer">
             <div class="product-price">$45.000</div>
-            <button class="add-btn">+</button>
+            
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="{{ url_for('static', filename='img/cell1.jpeg' ) }}"><div class="product-badge">Nuevo</div></div>
+        <div class="product-img"><img class="cell1" src="{{ url_for('static', filename='img/cell1.jpeg' ) }}"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
           <div class="product-name">Samsung A55 5G</div>
           <div class="product-desc">6.6" AMOLED · 5000mAh · 50MP AI Cam</div>
           <div class="product-footer">
             <div class="product-price">$1.890.000</div>
-            <button class="add-btn">+</button>
+            
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="{{ url_for('static', filename='img/img2.jpeg') }}" alt="imagen"><div class="product-badge">Nuevo</div></div>
+        <div class="product-img"><img class="vape2" src="{{ url_for('static', filename='img/img2.jpeg') }}" alt="imagen"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
           <div class="product-name">GeekVape Aegis Legend</div>
           <div class="product-desc">200W · IP67 resistente al agua · Dual 18650</div>
           <div class="product-footer">
             <div class="product-price">$280.000</div>
-            <button class="add-btn">+</button>
+            
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="{{ url_for('static', filename='img/cell2.jpeg') }}"><div class="product-badge"></div></div>
+        <div class="product-img"><img class="cell2" src="{{ url_for('static', filename='img/cell2.jpeg') }}"><div class="product-badge"></div></div>
         <div class="product-info">
           <div class="product-name">iPhone 15 128GB</div>
           <div class="product-desc">Dynamic Island · USB-C · Cámara 48MP</div>
           <div class="product-footer">
             <div class="product-price">$3.200.000</div>
-            <button class="add-btn">+</button>
+            
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">🔋</div>
+        <div class="product-img"><img class="vape3" src="{{ url_for('static', filename='img/iphon.jpg') }}" alt="imagen"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
-          <div class="product-name">SMOK Nord 5</div>
-          <div class="product-desc">2000mAh · Pantalla OLED · RPM y DC MTL</div>
+          <div class="product-name">iPhone SE 16</div>
+          
           <div class="product-footer">
             <div class="product-price">$195.000</div>
-            <button class="add-btn">+</button>
+            
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">📱</div>
+        <div class="product-img "><img class="cell3" src="{{ url_for('static', filename='img/vaper2.jpg') }}" alt="imagen"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
-          <div class="product-name">Xiaomi Redmi Note 13</div>
-          <div class="product-desc">AMOLED 120Hz · 108MP · Carga 67W</div>
+          <div class="product-name">Escencia</div>
           <div class="product-footer">
             <div class="product-price">$980.000</div>
-            <button class="add-btn">+</button>
+            
           </div>
         </div>
       </div>
@@ -170,8 +179,8 @@
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-logo">VapeTech<span style="color:var(--neon)">AI</span></div>
-  <p>© 2025 VapeTech Store — Bogotá, Colombia</p>
-  <p style="color:var(--muted)">Hecho con IA ⚡</p>
+  <p>© 2025 VapeTech Store — Risaralda, Colombia</p>
+
 </footer>
 
 </body>

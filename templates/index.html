@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VapeTech Store — IA Assistant</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<!-- ─── HEADER ─── -->
+{% block title %}Inicio - EcoEnergía{% endblock %}
+
+{% block content %}
+
 <header>
   <div class="logo">
     <div class="logo-icon">⚡</div>
@@ -21,7 +15,7 @@
     <a href="#chat-section">IA Chat</a>
     <a href="#">Garantía</a>
   </nav>
-  <button class="header-btn" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})">Consultar IA ↗️</button>
+  <button class="header-btn" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})">Consultar IA ↗</button>
 </header>
 
 <!-- ─── HERO ─── -->
@@ -79,7 +73,7 @@
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="{{ url_for('static', filename='img/cell1.jpeg ) }}"><div class="product-badge">Nuevo</div></div>
+        <div class="product-img"><img src="{{ url_for('static', filename='img/cell1.jpeg' ) }}"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
           <div class="product-name">Samsung A55 5G</div>
           <div class="product-desc">6.6" AMOLED · 5000mAh · 50MP AI Cam</div>
@@ -91,7 +85,7 @@
       </div>
 
       <div class="product-card">
-        <div class="product-img"><img src="{{ url_for('static', filename='img/img2.jpeg') }}"><div class="product-badge">Nuevo</div></div>
+        <div class="product-img"><img src="{{ url_for('static', filename='img/img2.jpeg') }}" alt="imagen"><div class="product-badge">Nuevo</div></div>
         <div class="product-info">
           <div class="product-name">GeekVape Aegis Legend</div>
           <div class="product-desc">200W · IP67 resistente al agua · Dual 18650</div>
@@ -172,54 +166,6 @@
   </div>
 </section>
 
-<!-- ─── CHATBOT ─── -->
-<section class="section" id="chat-section">
-  <div class="chat-wrapper">
-
-    <div class="chat-info">
-      <p class="section-label">Asistente IA</p>
-      <h2>Pregunta lo que quieras sobre nuestros productos</h2>
-      <p class="section-sub" style="margin-bottom:1.2rem;">
-        Nuestro chatbot con IA responde al instante: comparativos, compatibilidad, precios, usos y recomendaciones personalizadas.
-      </p>
-      <div class="chat-bubbles">
-        <div class="bubble"><span class="bubble-icon">🔋</span> ¿Cuánto dura la batería del Vape X500?</div>
-        <div class="bubble"><span class="bubble-icon">📱</span> ¿Cuál es mejor para gaming, el A55 o el Note 13?</div>
-        <div class="bubble"><span class="bubble-icon">💨</span> ¿Qué nicotina me recomiendas para empezar?</div>
-        <div class="bubble"><span class="bubble-icon">🛡️</span> ¿Los vapers tienen garantía?</div>
-      </div>
-    </div>
-
-    <div class="chat-box">
-      <div class="chat-header">
-        <div class="chat-avatar">⚡</div>
-        <div class="chat-header-info">
-          <div class="name">VapeTech IA</div>
-          <div class="chat-status"><div class="status-dot"></div> En línea ahora</div>
-        </div>
-      </div>
-
-      <div class="chat-messages" id="chat-messages">
-        <div class="msg bot">
-          <div class="msg-avatar bot">IA</div>
-          <div class="msg-bubble">¡Hola! 👋 Soy el asistente de VapeTech. Puedo ayudarte con comparativos de productos, precios, nicotinas, compatibilidad de celulares y mucho más. ¿En qué te ayudo hoy?</div>
-        </div>
-      </div>
-
-      <div class="chat-suggestions" id="chips">
-        <button class="chip" onclick="sendChip(this)">¿Mejor vape desechable?</button>
-        <button class="chip" onclick="sendChip(this)">Celular para fotos</button>
-        <button class="chip" onclick="sendChip(this)">¿Tienen envío a mi ciudad?</button>
-      </div>
-
-      <div class="chat-input-area">
-        <input class="chat-input" id="chat-input" type="text" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter') sendMessage()" />
-        <button class="send-btn" onclick="sendMessage()">➤</button>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -228,9 +174,7 @@
   <p style="color:var(--muted)">Hecho con IA ⚡</p>
 </footer>
 
-<button class="float-chat-btn" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})" title="Chatear con IA">💬</button>
-
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
 </body>
-</html>
+
+
+{% endblock %}

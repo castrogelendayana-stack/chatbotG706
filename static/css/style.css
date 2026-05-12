@@ -1,5 +1,5 @@
  .msg { margin: 8px 0; }
-    .user { text-align: right; color: blue; }
+    .user { text-align: right; color: rgb(1, 104, 4); }
     .bot { text-align: left; color: green; }
     input[type="text"] {
       width: 100%;
@@ -456,7 +456,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #0d6efd;
+  background: #0dfd71;
   color: white;
   border: none;
   font-size: 26px;
@@ -478,7 +478,7 @@
   z-index: 1000;
 }
 .chat-header {
-  background: #0d6efd;
+  background: #0dfd59;
   color: white;
   padding: 10px 15px;
   display: flex;
